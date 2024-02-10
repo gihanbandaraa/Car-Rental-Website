@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLMoto | Home</title>
+    <link rel="stylesheet" href="./Css/homepage.css">
+    
+</head>
+<body>
+    <!-- Navigation bar -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="brand">
+            <a href="#">SL<Span class="subbrand">Moto</Span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Vehicles</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<header class="header">
+    <div class="header-content">
+        <h1>Welcome to SLMoto</h1>
+        <p>Your ultimate destination for car rentals</p>
+        <a href="#" class="btn">Rent a Car</a>
+    </div>
+</header>
+
+<script>
+    // Toggle mobile menu
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active'); // Toggle the active class on mobile-menu
+        navLinks.classList.toggle('show');
+    });
+</script>
+    
+</body>
+</html>
