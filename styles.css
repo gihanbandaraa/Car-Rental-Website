@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'outfit';
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -32,7 +33,7 @@ button {
 }
 
 button {
-    background-color: #007bff;
+    background-color:red;
     color: #fff;
     cursor: pointer;
 }

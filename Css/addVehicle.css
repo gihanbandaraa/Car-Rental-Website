@@ -1,0 +1,50 @@
+/* Styles for the add vehicle form */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color:red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color:chocolate;
+}
+
+
+
+

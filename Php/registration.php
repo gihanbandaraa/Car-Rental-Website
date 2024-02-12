@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>User Login</h2>
-        <form action="login.php" method="post">
+        <h2>User Registration</h2>
+        <form action="../registerhandle.php" method="post">
             <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <button type="submit">Register</button>
         </form>
-        <p>Don't have an account? <a href="registration.html">Register</a></p>
+        <p>Already have an account? <a href="login.php">Login</a></p>
     </div>
 </body>
 </html>
