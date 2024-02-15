@@ -18,28 +18,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // Connect to the database
         $conn = Conn::GetConnection();
-        
+
         // Prepare the SQL statement
         $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
-        
+
         // Bind parameters
         $stmt->bindParam(':email', $email);
-        
+
         // Execute the statement
         $stmt->execute();
-        
+
         // Fetch user data
         $user = $stmt->fetch();
-        
+
         // Verify the password
         if ($user && password_verify($password, $user['password'])) {
             // Store user information in session variables
             $_SESSION['user_id'] = $user['Id'];
             $_SESSION['email'] = $user['email'];
-            
+            $_SESSION['user_name'] = $user['username'];
+
+
             // Debug: Check session variables
             var_dump($_SESSION);
-            
+
             // Redirect to home.php
             header("Location: Home.php");
             exit();
@@ -48,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: Php/login.php?error=invalid_credentials");
             exit();
         }
-    } catch(PDOException $e) {
+    } catch (PDOException $e) {
         // Display an error message if login fails
         echo "Error: " . $e->getMessage();
     }
@@ -57,4 +59,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: Php/login.php");
     exit();
 }
-?>

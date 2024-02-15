@@ -1,50 +1,109 @@
-/* Styles for the add vehicle form */
 .container {
     max-width: 600px;
     margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.container h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    padding: 20px 30px; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 form {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 15px; 
 }
 
 label {
     font-weight: bold;
+    font-size: 16px;
+    color: #666;
 }
 
 input[type="text"],
 input[type="number"],
 textarea {
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+}
+
+textarea {
+    resize: vertical; 
+}
+
+input[type="file"] {
+    border: none;
+    font-size: 16px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15.59l6.29-6.3a1 1 0 0 0-1.42-1.42L10 12.76 4.71 7.29a1 1 0 1 0-1.42 1.42L10 15.59z" fill="#666"/></svg>') no-repeat right 10px center/12px 12px; /* Add custom arrow */
 }
 
 input[type="submit"] {
-    background-color:red;
+    background-color: #ff5733;
     color: white;
-    padding: 10px 20px;
+    padding: 14px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
 }
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text {
+    flex: 1;
+    margin-right: 20px;
+    font-family: "outfit";
+}
+
+.text h2 {
+    font-size: 8vmin; 
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.text p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+.text img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.form-container {
+    flex: 1;
+    max-width: 600px;
+} 
 
 input[type="submit"]:hover {
-    background-color:chocolate;
+    background-color: #ff6c4e;
 }
 
-
-
-
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}

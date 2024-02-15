@@ -50,8 +50,8 @@ $vehicles = $vehicle->GetVehicles();
                     echo '<div class="dropdown">';
                     echo '<button class="dropbtn"><i class="fas fa-user-circle"></i></button>';
                     echo '<div class="dropdown-content">';
-                    echo '<a href="account.php">Account</a>';
-                    echo '<a href="logout.php">Logout</a>';
+                    echo '<a href="./Php/account.php">Account</a>';
+                    echo '<a href="./Php/logout.php">Logout</a>';
                     echo '</div>';
                     echo '</div>';
                 } else {
