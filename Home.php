@@ -52,6 +52,7 @@ $vehicles = $vehicle->GetVehicles();
                     echo '<div class="dropdown-content">';
                     echo '<a href="./Php/account.php">Account</a>';
                     echo '<a href="./Php/logout.php">Logout</a>';
+                    echo '<a href="./Php/activeJob.php">Active Job</a>';
                     echo '</div>';
                     echo '</div>';
                 } else {

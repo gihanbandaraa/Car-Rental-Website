@@ -1,0 +1,49 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.actions a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.actions a:hover {
+    background-color: rgba(255,0,0,0.5);
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color:rgba(255,0,0,0.5);
+}
