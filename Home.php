@@ -33,7 +33,7 @@ $vehicles = $vehicle->GetVehicles();
             </div>
             <ul class="nav-links">
                 <li><a href="./Home.php">Home</a></li>
-                <li><a href="#vehicle-list-container">Vehicles</a></li>
+                <li><a href="./allvehicle.php">Vehicles</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="./Php/add_vehicle_form.php">Post</a></li>
@@ -66,24 +66,34 @@ $vehicles = $vehicle->GetVehicles();
         <div class="header-content">
             <h1>Welcome to SL<span class="subtopic">Moto</span></h1>
             <p>Your ultimate destination for car rentals</p>
-            <a href="#" class="btn">Rent a Car</a>
+            <a href="./allvehicle.php" class="btn">Rent a Car</a>
         </div>
     </header>
     <h1 class="vehicle-list-heading">Available Vehicles for Rent</h1>
     <div class="vehicle-list-container" id="vehicle-list-container">
-        <button class="view-all-btn">View All</button>
-        <?php
-        foreach ($vehicles as $vehicle) {
-            echo '<div class="vehicle-card">';
-            echo '<img src="' . $vehicle->Image . '" alt="' . $vehicle->Title . '">';
-            echo '<h2>' . $vehicle->Title . '</h2>';
-            echo '<p>' . $vehicle->Description . '</p>';
-            echo '<p>Price: $' . $vehicle->Price . ' per day</p>';
-            echo '<button class="rent-btn">Rent</button>';
-            echo '</div>';
-        }
-        ?>
+        <a href="./allvehicle.php" class="view-all-btn" style="text-decoration: none;">View All </a>
+        <div class="vehicle-slideshow">
+            <?php
+
+            $chunkedVehicles = array_chunk($vehicles, 4);
+            foreach ($chunkedVehicles as $chunk) {
+                echo '<div class="vehicle-slide">';
+                foreach ($chunk as $vehicle) {
+                    echo '<div class="vehicle-card">';
+                    echo '<img src="' . $vehicle->Image . '" alt="' . $vehicle->Title . '">';
+                    echo '<h2>' . $vehicle->Title . '</h2>';
+                    echo '<p>' . $vehicle->Description . '</p>';
+                    echo '<p>Location: ' . $vehicle->Location . '</p>';
+                    echo '<p>Price: Rs.' . $vehicle->Price . ' per day</p>';
+                    echo '<button class="rent-btn" onclick="redirectToRentPage(' . $vehicle->ID . ')">Rent</button>';
+                    echo '</div>';
+                }
+                echo '</div>';
+            }
+            ?>
+        </div>
     </div>
+
     <script>
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
@@ -91,6 +101,31 @@ $vehicles = $vehicle->GetVehicles();
             mobileMenu.classList.toggle('active');
             navLinks.classList.toggle('show');
         });
+    </script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("vehicle-slide");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "flex";
+            setTimeout(showSlides, 3000);
+        }
+
+        function redirectToRentPage(vehicleId) {
+            window.location.href = './rent_vehicle.php?id=' + vehicleId;
+        }
     </script>
 </body>
 

@@ -23,7 +23,7 @@ session_start();
                 <li><a href="#vehicle-list-container">Vehicles</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="./Php/add_vehicle_form.php">Post</a></li>
+                <li><a href="../Php/add_vehicle_form.php">Post</a></li>
             </ul>
             <div class="mobile-menu">
                 <span></span>
@@ -63,9 +63,11 @@ session_start();
                     echo "<div class='vehicle'>";
                     echo "<p><strong>Vehicle Name:</strong> " . $row['Title'] . "</p>";
                     echo "<p><strong>Description:</strong> " . $row['Description'] . "</p>";
-                    echo "<p><strong>Price per Day:</strong> $" . $row['Price'] . "</p>";
+                    echo "<p><strong>Location:</strong> " . $row['Location'] . "</p>";
+                    echo "<p><strong>Price per Day:</strong> Rs." . $row['Price'] . "</p>";
                     echo "<p><strong>Phone Number:</strong> " . $row['Phone_Number'] . "</p>";
                     echo "<p><strong>Active Days:</strong> " . $row['Time_Duration'] . "</p>";
+                    echo "<p><strong>Status:</strong> " . $row['Status'] . "</p>";
                     echo "<img src='../" . $row['Image'] . "' alt='Vehicle Image'>";
                     echo "<div class='actions'>";
                     echo "<a href='../edit_vehicle.php?id=" . $row['Id'] . "'>Edit</a>";

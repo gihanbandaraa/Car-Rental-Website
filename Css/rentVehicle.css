@@ -1,0 +1,116 @@
+
+.vehicle-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    height: fit-content;
+}
+
+
+.vehicle-image {
+    flex: 0 0 40%; 
+    margin-right: 20px;
+ 
+}
+
+.vehicle-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+.vehicle-info {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.vehicle-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.vehicle-info p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.rent-form {
+    
+    margin: 0 auto;
+    background-color:white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.rent-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.rent-form input[type="text"],
+.rent-form input[type="email"],
+.rent-form input[type="tel"],
+.rent-form input[type="number"] {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.rent-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.rent-form button:hover {
+    background-color: #ff7043;
+}
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rent-form {
+    width: calc(70% - 20px);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.terms {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.terms h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.terms ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.terms li {
+    margin-bottom: 8px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
