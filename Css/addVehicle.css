@@ -49,7 +49,7 @@ select {
     font-size: 16px;
     color: #333;
     appearance: none;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15.59l6.29-6.3a1 1 0 0 0-1.42-1.42L10 12.76 4.71 7.29a1 1 0 1 0-1.42 1.42L10 15.59z" fill="#666"/></svg>') no-repeat right 10px center/12px 12px; /* Add custom arrow */
+   
 }
 
 input[type="submit"] {
