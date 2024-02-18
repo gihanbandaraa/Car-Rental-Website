@@ -27,8 +27,8 @@ $vehicles = $vehicle->GetVehicles();
             <ul class="nav-links">
                 <li><a href="./Home.php">Home</a></li>
                 <li><a href="./allvehicle.php">Vehicles</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="./Home.php#about-us">About</a></li>
+                <li><a href="./contactUs.php">Contact</a></li>
                 <li><a href="./Php/add_vehicle_form.php">Post</a></li>
             </ul>
             <div class="mobile-menu">
@@ -86,6 +86,49 @@ $vehicles = $vehicle->GetVehicles();
             ?>
         </div>
     </div>
+
+    <section class="about-us" id="about-us">
+        <div class="heading">
+            <h1>About Us</h1>
+        </div>
+        <div class="content">
+            <p>Welcome to our vehicle rental service! We're dedicated to providing you with the best rental experience.</p>
+            <p>At our company, we offer a wide range of vehicles to suit your needs, whether you're looking for a compact car for a weekend getaway or a spacious SUV for a family road trip.</p>
+            <p>Our team is committed to ensuring that every aspect of your rental experience is seamless and hassle-free. From booking your vehicle online to picking it up at one of our convenient locations, we're here to help every step of the way.</p>
+            
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="./Home.php">Home</a></li>
+                    <li><a href="./allvehicle.php">Vehicles</a></li>
+                    <li><a href="./Home.php#about-us">About Us</a></li>
+                    <li><a href="./contactUs.php">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Welcome to our vehicle rental service! We provide a wide range of vehicles for rent to meet your transportation needs.</p>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Information</h2>
+                <ul>
+                    <li><span><i class="fas fa-map-marker-alt"></i></span>123 Main Street, City, Country</li>
+                    <li><span><i class="fas fa-envelope"></i></span>info@vehiclerental.com</li>
+                    <li><span><i class="fas fa-phone"></i></span>+123-456-7890</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 Vehicle Rental Service. All rights reserved.
+    </div>
+</footer>
+ 
 
     <script>
         const mobileMenu = document.querySelector('.mobile-menu');

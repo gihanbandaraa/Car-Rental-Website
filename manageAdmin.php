@@ -1,36 +1,31 @@
 <?php
 session_start();
 
-// Check if user is logged in and is an admin
 if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'admin') {
-    // Redirect to login page or another appropriate page
     header("Location: Php/login.php");
     exit();
 }
 
 include("Php/Conn.php");
 
-// Function to fetch all admin accounts
 function getAllAdmins($conn) {
     $stmt = $conn->query("SELECT * FROM Users WHERE user_type = 'admin'");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Function to delete an admin account
+
 function deleteAdmin($conn, $adminId) {
     $stmt = $conn->prepare("DELETE FROM Users WHERE Id = :admin_id");
     $stmt->bindParam(':admin_id', $adminId);
     $stmt->execute();
 }
 
-// Fetch all admin accounts
+
 $admins = getAllAdmins(Conn::GetConnection());
 
-// Handle delete request
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_admin"])) {
     $adminId = $_POST["admin_id"];
     deleteAdmin(Conn::GetConnection(), $adminId);
-    // Refresh the page after deleting the admin
     header("Location: admin.php");
     exit();
 }
@@ -71,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_admin"])) {
                     <li>
                         <strong>Username:</strong> <?php echo $admin['username']; ?><br>
                         <strong>Email:</strong> <?php echo $admin['email']; ?><br>
-                        <!-- Add edit and delete buttons -->
                         <form action="" method="post">
                             <input type="hidden" name="admin_id" value="<?php echo $admin['Id']; ?>">
                             <button type="submit" name="delete_admin">Delete</button>

@@ -19,7 +19,7 @@ $vehicle = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 if (!$vehicle) {
-    header("Location: Home.php"); // Redirect to homepage if vehicle not found
+    header("Location: Home.php"); 
     exit();
 }
 ?>

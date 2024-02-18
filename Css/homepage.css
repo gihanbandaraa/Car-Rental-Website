@@ -328,3 +328,94 @@ body {
     outline: none;
     border-color: #f11313;
 }
+.about-us {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+   
+}
+
+.about-us .heading {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-us .content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-us p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.about-us button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.about-us button:hover {
+    background-color: #45a049;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    text-align: left;
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 50px;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: red;
+}
+
+.footer-bottom {
+    background-color: #222;
+    color: #ccc;
+    padding: 10px 0;
+    text-align: center;
+}
+
