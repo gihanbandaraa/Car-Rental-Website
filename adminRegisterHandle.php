@@ -11,7 +11,7 @@ $password = $_POST["password"];
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
-$user_type = "user";
+$user_type = "admin";
 try {
  
     $conn = Conn::GetConnection();

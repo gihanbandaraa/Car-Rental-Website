@@ -1,15 +1,8 @@
 <?php
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
-// Include the Conn.php file to establish a database connection
 include("Php/Conn.php");
 include("Php/vehicleClass.php");
 session_start();
-
-// Debug: Check session variables
-var_dump($_SESSION);
 
 $vehicle = new Vehicle();
 $vehicles = $vehicle->GetVehicles();
