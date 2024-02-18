@@ -60,7 +60,7 @@ body {
 }
 
 .nav-links li a:hover {
-    color:chocolate;
+    color:red;
 }
 
 .mobile-menu {
@@ -238,12 +238,13 @@ body {
     position: relative; /* Ensure relative positioning for the container */
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
 }
 
 .vehicle-card {
-    width: 300px;
+    width: 300px; 
     padding: 20px;
     margin: 20px;
     border: 1px solid #ccc;
@@ -309,4 +310,21 @@ body {
     text-align: center;
     font-family: 'outfit';
     font-weight: 700;
+}
+.search-container {
+    margin: 20px 40px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #f11313;
 }

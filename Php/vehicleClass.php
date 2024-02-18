@@ -13,23 +13,28 @@ class Vehicle
     public $Time_Duration;
     public $User_Name;
     public $User_Email;
+    public $Location; 
+    public $Status;
 
     // Method to add vehicle details
-    public function AddVehicle($title, $description, $price, $image, $phone_number, $time_duration, $user_name, $user_email)
+    public function AddVehicle($title, $description, $price, $image, $phone_number, $time_duration, $user_name, $user_email, $location,$status)
     {
         try {
-            $query = "INSERT INTO `Vehicles` (`Title`, `Description`, `Price`, `Image`, `Phone_Number`, `Time_Duration`, `User_Name`, `User_Email`) 
-                      VALUES (:Title, :Description, :Price, :Image, :Phone_Number, :Time_Duration, :User_Name, :User_Email)";
+            $query = "INSERT INTO `Vehicles` (`Title`, `Description`, `Price`, `Image`, `Phone_Number`, `Time_Duration`, `User_Name`, `User_Email`, `Location`,`Status`) 
+                      VALUES (:Title, :Description, :Price, :Image, :Phone_Number, :Time_Duration, :User_Name, :User_Email, :Location,:Status)";
             $conn = Conn::GetConnection();
             $st = $conn->prepare($query);
             $st->bindValue(":Title", $title, PDO::PARAM_STR);
             $st->bindValue(":Description", $description, PDO::PARAM_STR);
             $st->bindValue(":Price", $price, PDO::PARAM_INT);
             $st->bindValue(":Image", $image, PDO::PARAM_STR);
+           
             $st->bindValue(":Phone_Number", $phone_number, PDO::PARAM_STR);
             $st->bindValue(":Time_Duration", $time_duration, PDO::PARAM_STR);
             $st->bindValue(":User_Name", $user_name, PDO::PARAM_STR);
             $st->bindValue(":User_Email", $user_email, PDO::PARAM_STR);
+            $st->bindValue(":Location", $location, PDO::PARAM_STR); 
+            $st->bindValue(":Status", $status, PDO::PARAM_STR);
             $st->execute();
             return $conn->lastInsertId();
         } catch (Exception $ex) {
@@ -41,7 +46,7 @@ class Vehicle
     public static function GetVehicles()
     {
         try {
-            $query = "SELECT `Id`, `Title`, `Description`, `Price`, `Image`, `Phone_Number`, `Time_Duration`, `User_Name`, `User_Email` FROM `Vehicles`";
+            $query = "SELECT `Id`, `Title`, `Description`, `Price`, `Image`, `Phone_Number`, `Time_Duration`, `User_Name`, `User_Email`, `Location`,`Status` FROM `Vehicles`";
             $conn = Conn::GetConnection();
             $vehicles = array();
             $result = $conn->query($query);
@@ -56,6 +61,8 @@ class Vehicle
                 $vehicle->Time_Duration = $row['Time_Duration'];
                 $vehicle->User_Name = $row['User_Name'];
                 $vehicle->User_Email = $row['User_Email'];
+                $vehicle->Location = $row['Location'];
+                $vehicle->Status = $row['Status'];
                 array_push($vehicles, $vehicle);
             }
             return $vehicles;
@@ -65,11 +72,12 @@ class Vehicle
     }
 
     // Method to update vehicle details
-    public function UpdateVehicle($id, $title, $description, $price, $image, $phone_number, $time_duration, $user_name, $user_email)
+    public function UpdateVehicle($id, $title, $description, $price, $image, $phone_number, $time_duration, $user_name, $user_email, $location)
     {
         try {
             $query = "UPDATE `Vehicles` SET `Title`=:Title, `Description`=:Description, `Price`=:Price, `Image`=:Image,
-                      `Phone_Number`=:Phone_Number, `Time_Duration`=:Time_Duration, `User_Name`=:User_Name, `User_Email`=:User_Email
+                      `Phone_Number`=:Phone_Number, `Time_Duration`=:Time_Duration, `User_Name`=:User_Name, `User_Email`=:User_Email,
+                      `Location`=:Location
                       WHERE `ID`=:ID";
             $conn = Conn::GetConnection();
             $st = $conn->prepare($query);
@@ -81,6 +89,7 @@ class Vehicle
             $st->bindValue(":Time_Duration", $time_duration, PDO::PARAM_STR);
             $st->bindValue(":User_Name", $user_name, PDO::PARAM_STR);
             $st->bindValue(":User_Email", $user_email, PDO::PARAM_STR);
+            $st->bindValue(":Location", $location, PDO::PARAM_STR); 
             $st->bindValue(":ID", $id, PDO::PARAM_INT);
             $st->execute();
         } catch (Exception $ex) {

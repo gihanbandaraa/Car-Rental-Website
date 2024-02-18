@@ -22,7 +22,7 @@ session_start();
             </div>
             <ul class="nav-links">
                 <li><a href="../Home.php">Home</a></li>
-                <li><a href="#vehicle-list-container">Vehicles</a></li>
+                <li><a href="../allvehicle.php">Vehicles</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="./Php/add_vehicle_form.php">Post</a></li>
