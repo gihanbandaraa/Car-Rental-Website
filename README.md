@@ -16,9 +16,9 @@ This is a web application for managing vehicle rentals. It allows users to brows
 
 ## Installation
 1. Clone this repository to your local machine.
-2. Import the SQL file (`database.sql`) to set up the database schema.
+2. Import the SQL file (`sl_moto.sql`) to set up the database schema.
 3. Configure database connection in `Php/Conn.php` file.
-4. Open `index.php` in your web browser to access the website.
+4. Open `Home.php` in your web browser to access the website.
 
 ## Usage
 - As a User:
